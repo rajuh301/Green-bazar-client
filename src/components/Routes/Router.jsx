@@ -7,9 +7,12 @@ import Details from "../Pages/Details";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Dashboard/Dashboard";
 
 
-const router = createBrowserRouter([
+
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>
@@ -31,7 +34,11 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <Register></Register>
+  },
+
+  {
+    path: '/dashboard',
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
   }
 ]);
 
-export default router;

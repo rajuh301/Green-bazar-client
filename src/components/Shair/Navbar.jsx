@@ -33,11 +33,7 @@ const Navbar = () => {
                             <li><Link to="/">Home</Link></li>
                             <li><a>Descount</a></li>
                             <li><a>About</a></li>
-
-                            {
-                                isAdmin ? <li><Link to="/">Admin</Link></li> :
-                                    <li><Link to="/">Dashboard</Link></li>
-                            }
+                            <li><Link to="/dashboard">Dashboard</Link></li>
 
 
                         </ul>
@@ -54,13 +50,8 @@ const Navbar = () => {
                         <li><a>Descount</a></li>
                         <li><a>Dashoard</a></li>
                         <li><a>About</a></li>
-
-                        {
-                            isAdmin ? <li><Link to="/">Admin</Link></li> :
-                                <li><Link to="/">Dashboard</Link></li>
-                        }
-
-
+                        <li><Link to="/dashboard">Dashboard</Link></li>
+               
 
                     </ul>
                 </div>

@@ -3,14 +3,14 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import axios from "axios";
 import { app } from "../firebase/firebase.config";
 
-export const AuthContext = createContext(null);
+
+export const AuthContext = createContext({});
+
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -18,7 +18,6 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
-
 
     const signIn = (email, password) => {
         setLoading(true);
@@ -43,15 +42,15 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            // console.log('Current user', currentUser);
-
-           
-
+            setUser(currentUser)
+            console.log('current user', currentUser)
+            setLoading(false)
         });
+
         return () => {
-            return unsubscribe();
+            unsubscribe()
         }
+
     }, [])
 
     const authInfo = {
@@ -59,10 +58,9 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         signIn,
-        logOut,
-        updateUserProfile,
         googleSignIn,
-
+        logOut,
+        updateUserProfile
     }
 
     return (
@@ -73,3 +71,7 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
+
+
+
+
