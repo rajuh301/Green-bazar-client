@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Products = ({ data }) => {
 
-
     const { _id, name, image, rating, price } = data;
 
-
-
+  
+    
 
     return (
         <div>

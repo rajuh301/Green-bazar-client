@@ -20,6 +20,16 @@ const Navbar = () => {
     }
 
 
+    // --------------------------- localStorage
+
+    const localStorageData = JSON.parse(localStorage.getItem('cartItems'))
+
+    // --------------------------- localStorage
+
+
+
+
+
 
     return (
         <div className=''>
@@ -47,11 +57,21 @@ const Navbar = () => {
 
                         </li>
                         <li><Link to="/">Home</Link></li>
-                        <li><a>Descount</a></li>
+
+
                         <li><a>Dashoard</a></li>
-                        <li><a>About</a></li>
-                        <li><Link to="/dashboard">Dashboard</Link></li>
-               
+
+            
+
+
+                        <div className="indicator">
+                            <span className="indicator-item badge badge-secondary">{localStorageData?.length}</span>
+                            <li><Link to="/dashboard">Dashboard</Link></li>
+                        </div>
+
+
+
+
 
                     </ul>
                 </div>
@@ -62,7 +82,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="w-10 rounded-full">
-                        <img className='rounded-full' src={user ?.photoUrl} />
+                        <img className='rounded-full' src={user?.photoUrl} />
                     </div>
 
                     {
@@ -73,7 +93,7 @@ const Navbar = () => {
                             <li><Link to='/login'>Login</Link></li>
                         </>
                     }
-                    
+
                 </div>
             </div>
         </div>

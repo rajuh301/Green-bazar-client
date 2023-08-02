@@ -3,8 +3,31 @@ import Products from './Products';
 
 const Category = () => {
 
+
+
+
+
     const [datas, setDatas] = useState([])
     const [userdata, setUserData] = useState(null)
+
+
+    // ------------ get Data from product -------
+    useEffect(() => {
+        fetch('http://localhost:5000/product')
+            .then(res => res.json())
+            .then(data => setDatas(data))
+    }, [])
+
+    // ------------ get Data from product -------
+
+
+
+
+    // ------------ get Data from product -------
+
+
+    // ------------ get Data from product -------
+
 
 
 
@@ -41,7 +64,12 @@ const Category = () => {
         const data = food
         setDatas(data)
     }
+
     // --------------------------
+ 
+    // ------------------------
+
+    // ------------------------
 
 
 
@@ -73,10 +101,24 @@ const Category = () => {
                     <p className='text-2xl font-semibold'>Food</p>
                     <img className='w-24 h-24 mx-auto' src="https://olo-images-live.imgix.net/72/7288570f72a54140a41afdcfbd0e8980.png?auto=format%2Ccompress&q=60&cs=tinysrgb&w=716&h=474&fit=crop&fm=png32&s=5c543defe38946e36a8694d0b149fda4" alt="" />
                     <p>Product:{food.length}</p>
-
                 </button>
 
                 {/* ---------------------------------- */}
+
+
+
+
+
+
+
+                {/* -------------------------------------------- In complite-------------------------- */}
+
+
+                {/* -------------------------------------------- In complite-------------------------- */}
+
+
+
+
 
             </div>
 
