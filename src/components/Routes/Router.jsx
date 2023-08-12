@@ -11,6 +11,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import AddCategory from "../Dashboard/AdminDashboard/AddCategory";
 import AdminRoute from "./AdminRoute";
 import AddProduct from "../Dashboard/AdminDashboard/AddProduct";
+import BuyPage from "../Dashboard/BuyProduct/BuyPage";
 
 
 
@@ -30,6 +31,13 @@ export const router = createBrowserRouter([
     path: 'product/:_id',
     element: <Details></Details>,
     loader: ({ params }) => fetch(`http://localhost:5000/product/${params._id}`)
+  },
+
+
+  {
+    path: 'buyProduct/:_id',
+    element: <BuyPage></BuyPage>,
+
   },
   
   {

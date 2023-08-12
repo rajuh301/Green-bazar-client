@@ -43,11 +43,11 @@ const Details = () => {
     const cartItem = {
       data
     };
-  
+
     const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  
+
     const isProductExists = existingCartItems.some(item => item.data._id === cartItem.data._id);
-  
+
     if (isProductExists) {
       Swal.fire({
         title: 'Error',
@@ -58,7 +58,7 @@ const Details = () => {
     } else {
       existingCartItems.push(cartItem);
       localStorage.setItem('cartItems', JSON.stringify(existingCartItems));
-      
+
       Swal.fire({
         title: 'Added to Cart!',
         text: 'This product has been added to your cart.',
@@ -67,11 +67,19 @@ const Details = () => {
       });
     }
   };
-  
+
 
   // -------------- Add to cart---------------
 
+  // ---------------------- Buy Section------------
 
+  const handleBuy = (_id) => {
+    console.log(_id)
+  }
+
+
+
+  // ---------------------- Buy Section------------
 
 
 
@@ -94,7 +102,13 @@ const Details = () => {
 
               <div className="card-actions justify-end">
                 <button onClick={() => handleAddtoCart(data)} className="btn btn-primary">Add to cart</button>
-                <button className="btn btn-primary">Buy</button>
+
+
+                <Link to={`/buyProduct/${data._id}`}>
+                  <button className="btn btn-primary">Buy Now</button>
+                </Link>
+
+
               </div>
             </div>
 

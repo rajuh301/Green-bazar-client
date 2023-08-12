@@ -10,7 +10,7 @@ const Cart = ({ storeData }) => {
         if (localStorageData) {
             setCartItems(localStorageData);
         }
-    }, []);
+    }, [cartItems]);
 
     const handleDelete = (data) => {
         const localDataToDeleteId = data._id;
@@ -48,7 +48,6 @@ const Cart = ({ storeData }) => {
 
 
                     </thead>
-
 
 
                     <tbody>

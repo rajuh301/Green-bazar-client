@@ -76,7 +76,7 @@ const AddProduct = () => {
             });
     };
 
-    console.log(productName, productCategory, productPrice, productDescription);
+    // console.log(productName, productCategory, productPrice, productDescription);
 
 
 
